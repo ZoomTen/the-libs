@@ -1,0 +1,18 @@
+Description: Fixes incorrect translation include
+ .
+ libthe-libs (2.2-0) UNRELEASED; urgency=low
+ .
+   * Initial release.
+Author: Zumi Daxuya <daxuya.zumi+code@protonmail.com>
+
+--- libthe-libs-2.2.orig/lib/thelibs_translations.qrc
++++ libthe-libs-2.2/lib/thelibs_translations.qrc
+@@ -15,7 +15,7 @@
+         <file>translations/lt_LT.qm</file>
+         <file>translations/nb_NO.qm</file>
+         <file>translations/nl_NL.qm</file>
+-        <file>translations/no_NO.qm</file>
++        <file>translations/nn_NO.qm</file>
+         <file>translations/pl_PL.qm</file>
+         <file>translations/pt_BR.qm</file>
+         <file>translations/ro_RO.qm</file>

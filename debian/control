@@ -1,0 +1,23 @@
+Source: the-libs
+Maintainer: Zumi Daxuya <daxuya.zumi+code@protonmail.com>
+Section: x11
+Priority: optional
+Build-Depends: debhelper (>=10), qt5-qmake, pkg-config, libunwind-dev, libqt5x11extras5-dev, qtmultimedia5-dev, libqt5svg5-dev, libgsettings-qt-dev, qttools5-dev-tools
+Standards-Version: 4.5.0
+Homepage: https://github.com/vicr123/the-libs
+
+Package: libthe-libs1
+Section: libs
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Common functions for theDesk applications
+ Common functions and classes used for theDesk applications,
+ extending the Qt library. These only contain the library files.
+
+Package: libthe-libs-dev
+Section: libdevel
+Architecture: any
+Depends: libthe-libs1, ${shlibs:Depends}, ${misc:Depends}
+Description: Common functions for theDesk applications (development headers)
+ Common functions and classes used for theDesk applications,
+ extending the Qt library. These contain the necessary headers.

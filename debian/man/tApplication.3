@@ -1,0 +1,145 @@
+.TH tApplication 3  "July 19, 2020" "the-libs" "theSuite Manual"
+
+THIS MANPAGE IS A WORK IN PROGRESS!
+
+.SH NAME
+tApplication \- base application class
+
+.SH SYNOPSIS
+.B #include <tapplication.h>
+
+.SH DESCRIPTION
+The base application class, basically a wrapper around QApplication to add some extra stuff the About dialog can display, and then some other stuff.
+
+.SH CLASSES
+.IP - 2
+.BI "tApplication (int " &argc ", char " **argv ")"
+.br
+Instantiates a tApplication
+
+.SH SLOTS
+.IP - 2
+.BI "void registerCrashTrap ()"
+.br
+???
+.IP - 2
+.BI "QStringList exportBacktrace ()"
+.br
+???
+.IP - 2
+.BI "void setApplicationIcon (QIcon " icon ")"
+.br
+Sets the current application's window icon to \fIicon\fP
+.IP - 2
+.BI "void setShareDir (QString " shareDir ")"
+.br
+Sets the current application's shared files directory to \fIshareDir\fP. This is vital for finding the translation files.
+.IP - 2
+.BI "void setGenericName (QString " genericName ")"
+.br
+Used in \fBtAboutDialog\fP(3). Sets the current application's generic name to \fIgenericName\fP. The application's \fIgeneric name\fP would be a general description of the application in the form of, e.g. "Firefox is a \fI(web browser)\fP".
+.IP - 2
+.BI "void setAboutDialogSplashGraphic (QPixmap " aboutDialogSplashGraphic ")"
+.br
+Used in \fBtAboutDialog\fP(3). Sets the image that would appear in the left-hand side of about dialog. 
+.IP - 2
+.BI "void addLibraryVersion (QString " libraryName ", QString " version ")"
+.br
+Used in \fBtAboutDialog\fP(3). Specifies the library used along with its version number. This information would be appended to the "PROGRAMS" section of the about dialog.
+.IP - 2
+.BI "void addCopyrightLine (QString " copyrightLine ")"
+.br
+Used in \fBtAboutDialog\fP(3). Appends a custom copyright line beneath the default copyright message.
+.IP - 2
+.BI "void setCopyrightHolder (QString " copyrightHolder ")"
+.br
+Used in \fBtAboutDialog\fP(3). Sets the following portion of the default copyright message: "Copyright (c) \fIAuthorName\fP Year"
+.IP - 2
+.BI "void setCopyrightYear (QString " copyrightYear ")"
+.br
+Used in \fBtAboutDialog\fP(3). Sets the following portion of the default copyright message: "Copyright (c) AuthorName \fIYear\fP"
+.IP - 2
+.BI "void setApplicationLicense (KnownLicenses " license ")"
+.br
+Used in \fBtAboutDialog\fP(3). Declares the application's software license to be one of the following:
+.RS 4
+.IP - 2
+.I KnownLicenses::Gpl3
+.br
+GNU General Public License version 3
+.IP - 2
+.I KnownLicenses::Gpl3OrLater
+.br
+GNU General Public License version 3 or (at your option) a later version
+.IP - 2
+.I KnownLicenses::Gpl2
+.br
+GNU General Public License version 2
+.IP - 2
+.I KnownLicenses::Gpl2OrLater
+.br
+GNU General Public License version 2 or (at your option) a later version
+.I KnownLicenses::Lgpl3
+.br
+GNU Lesser General Public License version 3
+.IP - 2
+.I KnownLicenses::Lgpl3OrLater
+.br
+GNU Lesser General Public License version 3 or (at your option) a later version
+.IP - 2
+.I KnownLicenses::Lgpl2_1
+.br
+GNU Lesser General Public License version 2.1
+.IP - 2
+.I KnownLicenses::Lgpl2_1OrLater
+.br
+GNU Lesser General Public License version 2.1 or (at your option) a later version
+.I KnownLicenses::Other
+.br
+Use this to specify a custom license
+.RE
+.IP - 2
+.BI "QPixmap aboutDialogSplashGraphicFromSvg (QString " svgFile ")"
+.br
+Used in \fBtAboutDialog\fP(3). Generates a pixmap from the specified \fIsvgFile\fP path, meant for use with \fBsetAboutDialogSplashGraphic()\fP.
+.IP - 2
+.BI "void installTranslators ()"
+.br
+???
+.IP - 2
+.BI "QString macOSBundlePath ()"
+.br
+???
+.IP - 2
+.BI "void restart ()"
+.br
+???
+
+.SH SIGNALS
+.IP - 2
+.BI "void openFile (QString " file ")"
+.br
+???
+.IP - 2
+.BI "void updateTranslators ()"
+.br
+???
+
+.SH SEE ALSO
+\fBthe-libs\fR(7),
+\fBtAboutDialog\fR(3)
+
+.SH BUGS
+See:
+\%https://github.com/vicr123/the-libs/issues
+
+.SH AUTHOR
+\fBthe-libs\fP is created by
+.MT vicr12345@\:gmail.com
+Victor Tran
+.ME
+.PP
+This manpage is written by
+.MT daxuya.zumi+docs@\:protonmail.com
+Zumi
+.ME

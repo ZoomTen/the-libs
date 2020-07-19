@@ -1,0 +1,144 @@
+.TH the-libs 7  "July 19, 2020" "theSuite" "theSuite Manual"
+
+.SH NAME
+the\-libs \- common library for theDesk applications
+
+.SH DESCRIPTION
+.B the-libs
+is a library providing common functionality to theDesk and theShell applications (otherwise known as the* apps or \fBtheSuite\fP) such as application settings, custom widgets, toasts, among others.
+.PP
+Most of these subclass existing Qt functionalities and extend them, however some also provide new and easier interfaces e.g. \fBtPromise\fP(3).
+
+.SH FILES
+Once installed,
+.B the-libs
+provides:
+
+.IP - 2
+header files (listed in \fIHEADERS\fP)
+
+.IP - 2
+the library file (and its associated links):
+.I $LIB_DIR/libthe-libs.so
+
+.IP - 2
+Qt module for Qmake:
+.I $LIB_DIR/qt/mkspecs/modules/qt_thelib.pri
+
+.IP - 2
+Pri files for Qmake:
+
+.RS
+.IP - 2
+.I /usr/share/the-libs/pri/buildmaster.pri
+.br
+Simply calls the other Pri files listed underneath.
+
+.IP - 2
+.I /usr/share/the-libs/pri/checkblueprint.pri
+.br
+Uses \fBgit\fR(1) to determine if the current build is a "blueprint" build by way of branch name, and sets the \fIT_BLUEPRINT_BUILD\fP compiler define. Otherwise, the \fIT_STABLE_BUILD\fP define is set. This is useful to clearly differentiate between stable versions and development versions.
+
+.IP - 2
+.I /usr/share/the-libs/pri/gentranslations.pri
+.br
+Creates Qt translator files for the 220 languages that are currently supported by \fBthe-libs\fP.
+
+.IP - 2
+.I /usr/share/the-libs/pri/installtranslations.pri
+.br
+Installs the translation files under \fI/usr/share/$SHARE_APP_NAME/translations\fP, where \fI$SHARE_APP_NAME\fP is defined in the Qmake file.
+.RE
+
+.SH HEADERS
+.RS
+.I <taboutdialog.h>
+.br
+.I <tapplication.h>
+.br
+.I <tcircularspinner.h>
+.br
+.I <tconditionalwidget.h>
+.br
+.I <tcsdtools.h>
+.br
+.I <tdatetimepicker.h>
+.br
+.I <terrorflash.h>
+.br
+.I <the-libs_global.h>
+.br
+.I <tlocale.h>
+.br
+.I <tmessagebox.h>
+.br
+.I <tnotification.h>
+.br
+.I <tpopover.h>
+.br
+.I <tpromise.h>
+.br
+.I <tpropertyanimation.h>
+.br
+.I <tsettings.h>
+.br
+.I <tshortcuthud.h>
+.br
+.I <tstackedwidget.h>
+.br
+.I <tstatusframe.h>
+.br
+.I <tswitch.h>
+.br
+.I <tsystemsound.h>
+.br
+.I <ttitlelabel.h>
+.br
+.I <ttoast.h>
+.br
+.I <tvariantanimation.h>
+.br
+.I <tvirtualkeyboard.h>
+.RE
+
+.SH SEE ALSO
+\fBtAboutDialog\fR(3),
+\fBtApplication\fR(3),
+\fBtCircularSpinner\fR(3),
+\fBtConditionalWidget\fR(3),
+\fBtCsdTools\fR(3),
+\fBtDateTimePicker\fR(3),
+\fBtErrorFlash\fR(3),
+\fBtLocale\fR(3),
+\fBtMessageBox\fR(3),
+\fBtNotification\fR(3),
+\fBtPopover\fR(3),
+\fBtPromise\fR(3),
+\fBtPropertyAnimation\fR(3),
+\fBtSettings\fR(3),
+\fBtShortcutHud\fR(3),
+\fBtStackedWidget\fR(3),
+\fBtStatusFrame\fR(3),
+\fBtSwitch\fR(3),
+\fBtSystemSound\fR(3),
+\fBtTitleLabel\fR(3),
+\fBtToast\fR(3),
+\fBtVariantAnimation\fR(3),
+\fBtVirtualKeyboard\fR(3)
+
+.SH BUGS
+Currently not very portable (in terms of Unix-like operating systems); $SHARE_DIR is assumed to be \fI/usr/share\fP.
+.PP
+Issue tracker:
+\%https://github.com/vicr123/the-libs/issues
+
+.SH AUTHOR
+\fBthe-libs\fP is written by
+.MT vicr12345@\:gmail.com
+Victor Tran
+.ME
+.PP
+This manpage is written by
+.MT daxuya.zumi+docs@\:protonmail.com
+Zumi
+.ME
