@@ -17,7 +17,7 @@ Description: Common functions for theDesk applications
 Package: libthe-libs-dev
 Section: libdevel
 Architecture: any
-Depends: libthe-libs1, ${shlibs:Depends}, ${misc:Depends}
+Depends: libthe-libs1 (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
 Description: Common functions for theDesk applications (development headers)
  Common functions and classes used for theDesk applications,
  extending the Qt library. These contain the necessary headers.

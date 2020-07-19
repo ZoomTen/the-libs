@@ -1,0 +1,11 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: the-libs
+Source: https://www.github.com/vicr123/the-libs
+
+Files: *
+Copyright: 2020 Victor Tran <vicr12345@gmail.com>
+License: GPL-3
+
+Files: debian/*
+Copyright: 2020 Zumi Daxuya <daxuya.zumi+code@protonmail.com>
+License: GPL-3
